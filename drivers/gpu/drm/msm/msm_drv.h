@@ -648,6 +648,9 @@ struct msm_drm_private {
 	/* update the flag when msm driver receives shutdown notification */
 	bool shutdown_in_progress;
 
+	/* commit end time */
+	ktime_t commit_end_time;
+
 	struct msm_idle idle;
 };
 
