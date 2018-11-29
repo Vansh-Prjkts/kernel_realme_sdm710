@@ -379,6 +379,7 @@ static struct device_attribute power_supply_attrs[] = {
 	POWER_SUPPLY_ATTR(cc_soc),
 	POWER_SUPPLY_ATTR(qg_vbms_mode),
 	POWER_SUPPLY_ATTR(real_capacity),
+	POWER_SUPPLY_ATTR(fg_reset),
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_ATTR(charge_counter_ext),
 #ifdef VENDOR_EDIT//Fanhong.Kong@PSW.BSP.CHG, 2017/10/20, Add for hw battery check

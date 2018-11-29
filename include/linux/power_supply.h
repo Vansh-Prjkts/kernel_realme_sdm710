@@ -342,6 +342,7 @@ enum power_supply_property {
 	POWER_SUPPLY_PROP_CC_SOC,
 	POWER_SUPPLY_PROP_QG_VBMS_MODE,
 	POWER_SUPPLY_PROP_REAL_CAPACITY,
+	POWER_SUPPLY_PROP_FG_RESET,
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_PROP_CHARGE_COUNTER_EXT,
 #ifdef VENDOR_EDIT//Fanhong.Kong@PSW.BSP.CHG, 2017/10/20, Add for hw battery check
