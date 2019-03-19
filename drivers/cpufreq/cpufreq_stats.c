@@ -37,6 +37,18 @@ static int cpufreq_stats_update(struct cpufreq_stats *stats)
 	return 0;
 }
 
+static void cpufreq_stats_clear_table(struct cpufreq_stats *stats)
+{
+	unsigned int count = stats->max_state;
+
+	memset(stats->time_in_state, 0, count * sizeof(atomic64_t));
+#ifdef CONFIG_CPU_FREQ_STAT_DETAILS
+	memset(stats->trans_table, 0, count * count * sizeof(int));
+#endif
+	atomic64_set(&stats->last_time, get_jiffies_64());
+	stats->total_trans = 0;
+}
+
 static ssize_t show_total_trans(struct cpufreq_policy *policy, char *buf)
 {
 	return sprintf(buf, "%d\n", policy->stats->total_trans);
