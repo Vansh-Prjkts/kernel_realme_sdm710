@@ -2102,8 +2102,9 @@ long _do_fork(unsigned long clone_flags,
 	int trace = 0;
 	long nr;
 
-	/* Boost CPU to the max for 1250 ms when userspace launches an app */
-		devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 1250);
+	/* Boost DDR bus to the when userspace launches an app */
+	if (task_is_zygote(current))
+		devfreq_boost_kick(DEVFREQ_MSM_CPUBW);
 
 	/*
 	 * Determine whether and which event to report to ptracer.  When
