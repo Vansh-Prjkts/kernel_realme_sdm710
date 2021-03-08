@@ -3720,6 +3720,9 @@ retry_cpuset:
 		goto nopage;
 
 
+	/* Boost DDR bus when memory is low so allocation latency doesn't get too bad */
+	devfreq_boost_kick(DEVFREQ_MSM_CPUBW);
+
 	/*
 	 * The fast path uses conservative alloc_flags to succeed only until
 	 * kswapd needs to be woken up, and to avoid the cost of setting up
