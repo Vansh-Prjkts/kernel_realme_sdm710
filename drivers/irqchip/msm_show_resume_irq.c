@@ -16,7 +16,7 @@
 #include <linux/init.h>
 #ifndef VENDOR_EDIT
 //Nanwei.Deng@BSP.CHG.Basic,  2018/04/28, add for reseume irq.
-int msm_show_resume_irq_mask;
+int msm_show_resume_irq_mask = 1;
 #else
 int msm_show_resume_irq_mask = 1;
 #endif /*VENDOR_EDIT*/
