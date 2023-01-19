@@ -809,6 +809,7 @@ static ssize_t kgsl_pwrctrl_max_gpuclk_store(struct device *dev,
 	unsigned int val = 0;
 	int ret;
 
+	return count;
 	if (device == NULL)
 		return 0;
 
